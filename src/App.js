@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { Switch, Route } from "react-router-dom";
 import DynamicArticle from "./DynamicArticle/DynamicArticle.jsx";
-import { isEmpty } from "lodash";
+import { isEmpty, result } from "lodash";
 
 function App() {
-  const [fetchedData, setFetchedData] = useState();
+  const [fetchedData, setFetchedData] = useState({});
 
   useEffect(() => {
     const fetchData = async () => {
-      let responseJson;
-      // put data fetching code here!
+      // performs a GET request
+      const response = await fetch(`http://demo1390455.mockable.io/articles`);
+      const responseJson = await response.json();
       setFetchedData(responseJson);
     };
 
