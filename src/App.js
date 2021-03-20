@@ -3,7 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import ArticleList from "./ArticleList/ArticleList.jsx";
 import DynamicArticle from "./DynamicArticle/DynamicArticle.jsx";
 import { isEmpty } from "lodash";
-
+import appCSS from "./App.css";
 function App() {
   const [fetchedData, setFetchedData] = useState();
 
@@ -20,7 +20,9 @@ function App() {
     }
   }, [fetchedData]);
 
-  return isEmpty(fetchedData) ? <div>You have no data!</div> : (
+  return isEmpty(fetchedData) ? (
+    <div>You have no data!</div>
+  ) : (
     <div className="App">
       <Switch>
         <Route
@@ -29,9 +31,9 @@ function App() {
           render={({ match }) => {
             // getting the parameters from the url and passing
             // down to the component as props
-            return fetchedData ? <DynamicArticle
-              article={fetchedData[match.params.slug]}
-            /> : null
+            return fetchedData ? (
+              <DynamicArticle article={fetchedData[match.params.slug]} />
+            ) : null;
           }}
         />
         <Route exact path="/articlelist">
