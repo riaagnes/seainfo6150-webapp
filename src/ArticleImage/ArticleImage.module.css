@@ -1,0 +1,10 @@
+img {
+    float: top;
+    margin-top: .5px;
+    border-radius: 50%; 
+    border:5px solid  #c00;;
+    position: relative;
+    height:6em;
+    width: 8em; 
+}
+  
