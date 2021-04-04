@@ -5,6 +5,23 @@
     box-shadow: 0 5px 10px 5px rgba(0, 0, 0, .3);
     font-family: Arial, Helvetica, sans-serif;
     padding: 10px;
+    height:inherit;
+    overflow:auto;
+    display: flex;
+    flex-direction: row;
+    width:fit-content;
+    flex-wrap:wrap;
+    
+    
+}
+.listcontainer{
+    align-items:stretch;
+    display: flex;
+    flex-direction: column;
+    height: inherit;
+    width:fit-content;
+    flex-wrap:nowrap;
+    overflow: auto;
 }
 
 .container + .container {
@@ -27,4 +44,16 @@
 
 .link {
     color: #c00;
+}
+.imageTitleContainer{
+    display: flex;
+  flex-direction: row;
+    flex-wrap:nowrap;
+    height: inherit;
+    justify-content: center;
+
+}
+.title{
+    justify-content: center;
+    align-self:center;
 }

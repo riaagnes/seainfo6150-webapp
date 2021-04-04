@@ -13,21 +13,25 @@ const ArticleListItem = (props) => {
   }
 
   return (
-    <li className={styles.container}>
-      <article className={styles.article}>
-        <ArticleImage
-          url={props.article.image._url}
-          title={props.article.title}
-        />
-        <div className={styles.wrapper}>
-          <h2 className={styles.title}>
-            <Link
-              className={styles.link}
-              to={`/articlelist/${props.article.slug}`}
-            >
-              {props.article.title}
-            </Link>
-          </h2>
+    <div className={styles.listcontainer}>
+      <li className={styles.container}>
+        <article className={styles.article}>
+          <div className={styles.imageTitleContainer}>
+            <ArticleImage
+              url={props.article.image._url}
+              title={props.article.title}
+            />
+            <div className={styles.wrapper}>
+              <h2 className={styles.title}>
+                <Link
+                  className={styles.link}
+                  to={`/articlelist/${props.article.slug}`}
+                >
+                  {props.article.title}
+                </Link>
+              </h2>
+            </div>
+          </div>
           {isTextShowing && (
             <div className={styles.text}>
               <time className={styles.time} dateTime={props.article.timeStamp}>
@@ -36,13 +40,13 @@ const ArticleListItem = (props) => {
               <p>{props.article.shortText}</p>
             </div>
           )}
-        </div>
-        <ArticleTextToggleButton
-          buttonText={isTextShowing ? "Show less" : "Show more"}
-          onClick={onClick}
-        />
-      </article>
-    </li>
+          <ArticleTextToggleButton
+            buttonText={isTextShowing ? "Show less" : "Show more"}
+            onClick={onClick}
+          />
+        </article>
+      </li>
+    </div>
   );
 };
 
