@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import styles from "./ArticleListItem.module.css";
 import ArticleImage from "../ArticleImage/ArticleImage.jsx";
@@ -48,7 +47,5 @@ const ArticleListItem = (props) => {
   );
 };
 
-ArticleListItem.propTypes = {
-  article: PropTypes.object.isRequired,
-};
+
 export default ArticleListItem;

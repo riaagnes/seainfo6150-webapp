@@ -1,11 +1,9 @@
 import React from "react";
-import PropTypes from "prop-types";
 import styles from "./ArticleList.module.css";
 import ArticleListItem from "../ArticleListItem/ArticleListItem.jsx";
 
 const ArticleList = (props) => {
   let displayContent;
-
   if (props.articles.length) {
     displayContent = (
       <ul className={styles.container}>
@@ -25,7 +23,5 @@ const ArticleList = (props) => {
   );
 };
 
-ArticleList.propTypes = {
-    articles: PropTypes.array.isRequired
-}
+
 export default ArticleList;

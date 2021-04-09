@@ -29,7 +29,9 @@ const DynamicArticle = (props) => {
             {props.article.displayDate}
           </time>
         </header>
+        <div className={styles.gridContainer}>
         <HTMLText text={props.article.text} />
+        </div>
       </article>
     </div>
   );
